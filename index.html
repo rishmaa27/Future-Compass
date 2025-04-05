@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Compass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FUTURE COMPASS</h1>
+    
+    <img src="career.jpg" alt="Career Image" class="banner-image">
+
+    <p>Select your current education level to begin your personalized career journey.</p>
+
+    <div class="options">
+      <button onclick="openQuiz('10th')">10th Grade</button>
+      <button onclick="openQuiz('inter-mbipc')">Inter - MBiPC</button>
+      <button onclick="openQuiz('inter-bipc')">Inter - BiPC</button>
+      <button onclick="openQuiz('inter-mpc')">Inter - MPC</button>
+      <button onclick="openQuiz('btech')">BTech</button>
+      <button onclick="openQuiz('masters')">Masters</button>
+    </div>
+  </div>
+
+  <div id="quizContainer">
+    <button id="backBtn" onclick="closeQuiz()">← Back</button>
+    <iframe id="quizFrame" src=""></iframe>
+  </div>
+
+  <script>
+    function openQuiz(level) {
+      const urls = {
+        "10th": "https://kiranmaidiyya.github.io/FUTURE-COMPASS../",
+        "inter-mbipc": "https://bhanuja21.github.io/FUTURE_COMPASS-MBIPC/",
+        "inter-bipc": "https://ponnuriramyasaisri.github.io/Future-Compass./",
+        "inter-mpc": "https://bhanuja21.github.io/FUTURE-COMPASS-MPC/",
+        "btech": "https://santhosh-reddyp.github.io/bachelor/",
+        "masters": "https://prasanthi-neelamraju.github.io/future-compass/"
+      };
+
+      document.querySelector(".container").style.display = "none";
+      document.getElementById("quizFrame").src = urls[level];
+      document.getElementById("quizContainer").style.display = "block";
+    }
+
+    function closeQuiz() {
+      document.getElementById("quizFrame").src = "";
+      document.getElementById("quizContainer").style.display = "none";
+      document.querySelector(".container").style.display = "block";
+    }
+  </script>
+</body>
+</html>
